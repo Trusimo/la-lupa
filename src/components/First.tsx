@@ -3,10 +3,10 @@ type FirstProps = {
   subtitle: string;
 }
 
-function Header(props: FirstProps) {
+function First(props: FirstProps) {
   return (
     <><p className="paragraph montserrat">{props.titolo}</p><p className="paragraph montserrat">{props.subtitle}</p></>
   )
 }
 
-export default Header
+export default First
