@@ -3,10 +3,9 @@ import Header from "./components/Header";
 import First from "./components/First";
 import MenuSection from "./components/MenuSection";
 import ImageCarousel from "./components/ImageCarousel";
-import Contatti from "./components/Contatti"; // <-- NUOVO IMPORT
+import Contatti from "./components/Contatti";
 import Footer from "./components/Footer";
 
-// Importazione delle immagini dei piatti
 import amatricianaImg from "./assets/img/amatriciana.webp";
 import cacioPepeImg from "./assets/img/caciopepe.webp";
 import griciaImg from "./assets/img/gricia.webp";
@@ -49,57 +48,50 @@ function App() {
     { nome: "Gelato alla Crema" },
   ];
 
-  const piattiImages = [
-    amatricianaImg,
-    cacioPepeImg,
-    griciaImg,
-    norcinaImg
-  ];
+  const piattiImages = [amatricianaImg, cacioPepeImg, griciaImg, norcinaImg];
 
   return (
     <div className="app-container">
       <Navbar />
 
-      <section className="hero">
+      <header className="hero">
         <Header titolo="Trattoria La Lupa" />
-      </section>
+      </header>
 
-      <section className="content text-center">
+      {/* Spostato l'ID "menu" qui per includere "La dieta falla a casa" */}
+      <section id="menu" className="content text-center">
         <First
           titolo="La dieta falla a casa!"
           subtitle="Un angolo di Roma nel cuore di Nerviano. Vieni a scoprire l'autentica cucina romana."
         />
+
+        <div className="menu-container">
+          <MenuSection
+            index={0}
+            titolo="Antipasti"
+            items={antipasti}
+            legenda={["* Prodotti congelati", "** Potrebbe contenere il nocciolo"]}
+          />
+          <MenuSection index={1} titolo="Primi Piatti" items={primi} />
+          <MenuSection
+            index={2}
+            titolo="Dolci"
+            items={dolci}
+            prezzoFisso="7"
+            legenda={["* Distillato di mele francese"]}
+          />
+        </div>
       </section>
-
-      <div id="menu" className="menu-container">
-        <MenuSection
-          index={0}
-          titolo="Antipasti"
-          items={antipasti}
-          legenda={["* Prodotti congelati", "** Potrebbe contenere il nocciolo"]}
-        />
-
-        <MenuSection
-          index={1}
-          titolo="Primi Piatti"
-          items={primi}
-        />
-
-        <MenuSection
-          index={2}
-          titolo="Dolci"
-          items={dolci}
-          prezzoFisso="7"
-          legenda={["* Distillato di mele francese"]}
-        />
-      </div>
 
       <section id="piatti" className="our-dishes-section">
         <h2 className="section-title playfair-display">I Nostri Piatti</h2>
         <ImageCarousel images={piattiImages} interval={5000} />
       </section>
 
-      <Contatti />
+      <section id="contatti">
+        <Contatti />
+      </section>
+
       <Footer />
     </div>
   );

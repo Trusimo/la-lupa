@@ -106,7 +106,8 @@ a {
   transition: 0.3s;
 }
 
-.icon::before, .icon::after {
+.icon::before,
+.icon::after {
   content: "";
   position: absolute;
   width: 25px;
@@ -116,12 +117,27 @@ a {
   transition: 0.3s;
 }
 
-.icon::before { top: -8px; }
-.icon::after { top: 8px; }
+.icon::before {
+  top: -8px;
+}
 
-.icon.open { background: transparent; }
-.icon.open::before { transform: rotate(45deg); top: 0; }
-.icon.open::after { transform: rotate(-45deg); top: 0; }
+.icon::after {
+  top: 8px;
+}
+
+.icon.open {
+  background: transparent;
+}
+
+.icon.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.icon.open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
 
 .hero {
   position: relative;
@@ -136,7 +152,7 @@ a {
 .hero-title {
   font-family: 'Playfair Display', serif;
   color: #631212;
-  font-size: clamp(3.5rem, 8vw, 8rem);
+  /* font-size: clamp(3.5rem, 8vw, 8rem); */
   animation: fadeInDown 1.5s ease forwards;
 }
 
@@ -164,6 +180,30 @@ a {
   transition-delay: 0.5s;
 }
 
+/* --- ANIMAZIONE TIPO MENU (Entrata da sinistra) --- */
+.reveal-menu {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-menu.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- ANIMAZIONE TIPO CAROSELLO (Sfocatura) --- */
+.reveal-carousel {
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 1.5s ease, filter 1.5s ease;
+}
+
+.reveal-carousel.is-visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
 .menu-section {
   max-width: 900px;
   margin: 10px auto;
@@ -183,6 +223,7 @@ a {
 .menu-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #631212;
+  font-family: 'Playfair Display';
   text-transform: uppercase;
 }
 
@@ -209,7 +250,7 @@ a {
   display: flex;
   align-items: baseline;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .item-dots {
@@ -281,8 +322,13 @@ a {
   justify-content: center;
 }
 
-.carousel-control.prev { left: 15px; }
-.carousel-control.next { right: 15px; }
+.carousel-control.prev {
+  left: 15px;
+}
+
+.carousel-control.next {
+  right: 15px;
+}
 
 .carousel-indicators {
   position: absolute;
@@ -334,7 +380,7 @@ a {
 }
 
 .info-item {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .info-item h3 {
@@ -398,7 +444,7 @@ a {
 }
 
 .footer-socials a:hover {
-  color: #d4a373; /* Colore Oro */
+  color: #d4a373;
   transform: translateY(-3px);
 }
 
@@ -409,14 +455,39 @@ a {
   text-transform: uppercase;
 }
 
+.button-tel {
+  border: 1px solid #f9f4ef;
+  color: #f9f4ef;
+  background-color: #631212;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+/* Scorrimento fluido */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset per evitare che la Navbar copra il contenuto */
+#menu {
+  scroll-margin-top: 150px;
+}
+
+#piatti,
+#contatti {
+  scroll-margin-top: 80px;
+  /* Regola questo valore in base all'altezza della tua Navbar */
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-30px);
+    font-size: 80px;
   }
+
   to {
+    font-size: 70px;
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -425,17 +496,22 @@ a {
     flex-direction: column;
     align-items: center;
   }
-  
-  .info-box, .map-box {
+
+  .info-box,
+  .map-box {
     width: 100%;
     max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  body::before { background-size: 100%; }
-  
-  .menu-toggle { display: block; }
+  body::before {
+    background-size: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 
   .navbar-right {
     position: absolute;
@@ -450,7 +526,9 @@ a {
     justify-content: center;
   }
 
-  .navbar-right.active { max-height: 400px; }
+  .navbar-right.active {
+    max-height: 400px;
+  }
 
   .navbar-right ul {
     flex-direction: column;
@@ -465,5 +543,7 @@ a {
     font-size: 24px !important;
   }
 
-  .image-carousel-container { height: 350px; }
+  .image-carousel-container {
+    height: 350px;
+  }
 }

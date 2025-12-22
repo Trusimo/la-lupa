@@ -5,7 +5,7 @@ function Footer() {
         <footer className="footer-container">
             <div className="footer-socials">
                 <a
-                    href="https://www.instagram.com/trattoria_la_lupa/"
+                    href="https://www.instagram.com/lalupanerviano/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -13,7 +13,7 @@ function Footer() {
                     <Instagram size={28} />
                 </a>
                 <a
-                    href="https://www.facebook.com/trattorialalupanerviano"
+                    href="https://www.facebook.com/p/La-lupa-61574791467126/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"

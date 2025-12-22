@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 type MenuItem = {
     nome: string;
@@ -12,23 +12,48 @@ type MenuSectionProps = {
     items: MenuItem[];
     legenda?: string[];
     prezzoFisso?: string;
-    index: number; // Nuova prop per il ritardo sequenziale
+    index: number;
 };
 
 function MenuSection({ titolo, items, legenda, prezzoFisso, index }: MenuSectionProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    // Una volta visibile, smettiamo di osservare per mantenere l'elemento fisso
+                    observer.unobserve(entry.target);
+                }
+            },
+            { 
+                threshold: 0.15, // Parte quando il 15% dell'elemento è visibile
+                rootMargin: "0px 0px -50px 0px" // Inizia l'animazione leggermente prima che entri del tutto
+            }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        // La classe 'reveal-menu' attiva l'animazione di comparsa
         <section
-            className="menu-section montserrat reveal-menu"
-            style={{ animationDelay: `${index * 0.3}s` }} // Ogni titolo appare 0.3s dopo il precedente
+            ref={sectionRef}
+            className={`menu-section montserrat reveal-menu ${isVisible ? 'is-visible' : ''}`}
+            style={{ 
+                transitionDelay: isVisible ? `${index * 0.2}s` : '0s' 
+            }}
         >
             <div className="menu-header" onClick={() => setIsOpen(!isOpen)}>
                 <h2 className="menu-title playfair-display">
                     {titolo} {prezzoFisso && <span className="prezzo-fisso">€ {prezzoFisso}</span>}
                 </h2>
-                {/* Icona cambiata in + e - */}
                 <span className="accordion-icon">{isOpen ? '−' : '+'}</span>
             </div>
 
