@@ -22,7 +22,7 @@ function Footer() {
                 </a>
             </div>
             <p className="footer-copy">
-                &copy; {new Date().getFullYear()} Trattoria La Lupa - Prenotazioni solo telefoniche al<br></br><a className="text-decoration-underline" href="tel:0331074382">0331074382</a>
+                &copy; {new Date().getFullYear()} Trattoria Romana La Lupa<br></br><span className='my-2'>Piazza Italia 17, Nerviano (MI)</span><br></br>Prenotazioni solo telefoniche al<br></br><a className="text-decoration-underline" href="tel:0331074382">0331074382</a>
             </p>
         </footer>
     );
