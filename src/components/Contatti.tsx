@@ -32,7 +32,7 @@ function Contatti() {
                 <div className="info-box" ref={infoRef}>
                     <div
                         className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
-                        style={{ transitionDelay: '0.3s' }}
+                        style={{ transitionDelay: '0.2s' }}
                     >
                         <h3 className="montserrat">Telefono</h3>
                         <p><a className="button-tel" href="tel:0331074382">Prenota al <span className='text-decoration-underline'>+03 3107 4382</span></a></p>
@@ -40,7 +40,7 @@ function Contatti() {
 
                     <div
                         className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
-                        style={{ transitionDelay: '0.5s' }}
+                        style={{ transitionDelay: '0.6s' }}
                     >
                         <h3 className="montserrat">Orari di Apertura</h3>
                         <ul className="orari-list">
@@ -55,7 +55,7 @@ function Contatti() {
                     </div>
                     <div
                         className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
-                        style={{ transitionDelay: '0.1s' }}
+                        style={{ transitionDelay: '1.2s' }}
                     >
                         <h3 className="montserrat">Indirizzo</h3>
                         <p>Piazza Italia, 17, 20014 Nerviano (MI)</p>
