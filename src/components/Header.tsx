@@ -1,8 +1,4 @@
-type HeaderProps = {
-  titolo: string;
-};
-
-function Header(props: HeaderProps) {
+function Header() {
   return (
     <h1 className="hero-title playfair-display">
       <span className="line small delay-1">Trattoria</span>
