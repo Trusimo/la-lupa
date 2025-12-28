@@ -58,7 +58,7 @@ function App() {
       <Navbar />
 
       <header className="hero">
-        <Header titolo="Trattoria Romana La Lupa" />
+        <Header />
       </header>
 
       {/* Spostato l'ID "menu" qui per includere "La dieta falla a casa" */}
