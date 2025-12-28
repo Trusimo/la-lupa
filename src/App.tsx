@@ -10,6 +10,10 @@ import amatricianaImg from "./assets/img/amatriciana.webp";
 import cacioPepeImg from "./assets/img/caciopepe.webp";
 import griciaImg from "./assets/img/gricia.webp";
 import norcinaImg from "./assets/img/norcina.webp";
+import carboImg from "./assets/img/carbo2.jpg";
+import cacio2Img from "./assets/img/cacio3.jpg";
+import amatri2Img from "./assets/img/amatri2.jpg";
+import carbo2Img from  "./assets/img/carbo3.jpg";
 
 function App() {
   const antipasti = [
@@ -18,7 +22,7 @@ function App() {
     { nome: "Fiore Sardo al Miele", prezzo: "10,00" },
     { nome: "Provola alla Griglia", prezzo: "10,00" },
     { nome: "Supplì (4 pezzi)", prezzo: "8,00", nota: "*" },
-    { nome: "Carciofi Fritti a Spicchi (6 pezzi)", prezzo: "8,00", nota: "*" },
+    { nome: "Carciofi Fritti (6 pezzi)", prezzo: "8,00", nota: "*" },
     { nome: "Crocchette di Patate (6 pezzi)", prezzo: "8,00", nota: "*" },
     { nome: "Olive Ascolane (6 pezzi)", prezzo: "8,00", nota: "**" },
     { nome: "Fiori di Zucca (4 pezzi)", prezzo: "8,00", nota: "*" },
@@ -30,7 +34,7 @@ function App() {
     { nome: "Spaghetti alla Carbonara", prezzo: "15,00" },
     { nome: "Maccheroncini al Cinghiale", prezzo: "15,00", nota_testo: "(Fatti in casa)" },
     { nome: "Maccheroncini alla Gricia", prezzo: "15,00", nota_testo: "(Fatti in casa)" },
-    { nome: "Maccheroncini alla Norcina", prezzo: "15,00", nota_testo: "(fatti in casa, con ragù bianco di salsiccia e salsa al tartufo nero)" },
+    { nome: "Maccheroncini alla Norcina", prezzo: "15,00", nota_testo: "(Fatti in casa, con ragù bianco di salsiccia e salsa al tartufo nero)" },
     { nome: "Maccheroncini Cacio e Pepe", prezzo: "15,00", nota_testo: "(Fatti in casa)" },
     { nome: "Fusilli al Limone", prezzo: "15,00" },
   ];
@@ -40,7 +44,6 @@ function App() {
     { nome: "Torta di Mele", nota_testo: "Fatta in casa" },
     { nome: "Torta di Pere e Cioccolato", nota_testo: "Fatta in casa" },
     { nome: "Mousse alla Nutella", nota_testo: "Fatta in casa" },
-    { nome: "Seadas Specialità Sarda" },
     { nome: "Sorbetto (Limone, Caffè, Mela Verde)" },
     { nome: "Sorbetto al Limone Affogato alla Vodka" },
     { nome: "Sorbetto alla Mela Verde Affogato al Calvados", nota: "*" },
@@ -48,14 +51,14 @@ function App() {
     { nome: "Gelato alla Crema" },
   ];
 
-  const piattiImages = [amatricianaImg, cacioPepeImg, griciaImg, norcinaImg];
+  const piattiImages = [amatricianaImg, carbo2Img, cacioPepeImg, griciaImg, norcinaImg, carboImg, cacio2Img, amatri2Img];
 
   return (
     <div className="app-container">
       <Navbar />
 
       <header className="hero">
-        <Header titolo="Trattoria La Lupa" />
+        <Header titolo="Trattoria Romana La Lupa" />
       </header>
 
       {/* Spostato l'ID "menu" qui per includere "La dieta falla a casa" */}

@@ -30,36 +30,35 @@ function Contatti() {
             <div className="contatti-container">
                 {/* COLONNA SINISTRA: Tutte le info */}
                 <div className="info-box" ref={infoRef}>
-                    <div 
-                        className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
-                        style={{ transitionDelay: '0.1s' }}
-                    >
-                        <h3 className="montserrat">Indirizzo</h3>
-                        <p>Piazza Italia, 17, 20014 Nerviano (MI)</p>
-                    </div>
-
-                    <div 
+                    <div
                         className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
                         style={{ transitionDelay: '0.3s' }}
                     >
                         <h3 className="montserrat">Telefono</h3>
-                        <p><a className="button-tel" href="tel:0331074382">Prenota al 0331074382</a></p>
+                        <p><a className="button-tel" href="tel:0331074382">Prenota al <span className='text-decoration-underline'>+03 3107 4382</span></a></p>
                     </div>
 
-                    <div 
+                    <div
                         className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
                         style={{ transitionDelay: '0.5s' }}
                     >
                         <h3 className="montserrat">Orari di Apertura</h3>
                         <ul className="orari-list">
                             <li><span>Lunedì:</span> 19:00 – 23:00</li>
-                            <li><span>Martedì:</span> 12:00 – 14:00, 19:00 – 23:00</li>
+                            <li><span>Martedì:</span> 12:00 – 14:00<br></br>19:00 – 23:00</li>
                             <li className="chiuso"><span>Mercoledì:</span> Chiuso</li>
-                            <li><span>Giovedì:</span> 12:00 – 14:00, 19:00 – 23:00</li>
-                            <li><span>Venerdì:</span> 12:00 – 14:00, 19:00 – 23:00</li>
-                            <li><span>Sabato:</span> 12:00 – 14:00, 19:00 – 23:00</li>
-                            <li><span>Domenica:</span> 12:00 – 14:00, 19:00 – 23:00</li>
+                            <li><span>Giovedì:</span> 12:00 – 14:00<br></br>19:00 – 23:00</li>
+                            <li><span>Venerdì:</span> 12:00 – 14:00<br></br>19:00 – 23:00</li>
+                            <li><span>Sabato:</span> 12:00 – 14:00<br></br>19:00 – 23:00</li>
+                            <li><span>Domenica:</span> 12:00 – 14:00<br></br>19:00 – 23:00</li>
                         </ul>
+                    </div>
+                    <div
+                        className={`info-item reveal-menu ${isInfoVisible ? 'is-visible' : ''}`}
+                        style={{ transitionDelay: '0.1s' }}
+                    >
+                        <h3 className="montserrat">Indirizzo</h3>
+                        <p>Piazza Italia, 17, 20014 Nerviano (MI)</p>
                     </div>
                 </div>
 

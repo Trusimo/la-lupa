@@ -495,6 +495,7 @@ html {
   .contatti-container {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
   .info-box,
@@ -507,6 +508,30 @@ html {
 @media (max-width: 768px) {
   body::before {
     background-size: 100%;
+  }
+
+  ul {
+    padding: 0 2rem !important;
+  }
+
+  .item-descrizione {
+    text-align: start;
+    margin-top: -10px;
+  }
+
+  .item-nome {
+    text-align: start;
+    font-size: 14px;
+  }
+  
+  .item-nome, .item-prezzo {
+    white-space:nowrap;
+
+  }
+
+  .menu-legenda {
+    text-align: start;
+    font-size: 13px;
   }
 
   .menu-toggle {
